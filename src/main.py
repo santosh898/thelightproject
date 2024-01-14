@@ -4,12 +4,7 @@ from machine import Pin
 
 from utils.wifi import WIFI
 from utils.thingsboard import Thingsboard
-
 from light_controller import LightController
-
-led_pin = 5  # Assuming this is the led pin
-
-led = Pin(led_pin, Pin.OUT)
 
 wifi = WIFI()
 thingsboard = Thingsboard()
@@ -29,7 +24,7 @@ def on_rpc_request(request_id, method, params):
     elif method == "setLightStatus":
         thingsboard.client.send_rpc_reply(request_id, set_light_status(params.get("ON")))
 
-try:
+try: 
     wifi.connect()
     thingsboard.connect(on_rpc_request)
     thingsboard.subscribe_to_rpc()

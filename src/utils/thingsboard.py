@@ -20,6 +20,6 @@ class Thingsboard:
 
     def get_credentials(self):
         # get from eeprom
-        ip = '192.168.29.54'
+        ip = '192.168.0.253'
         access_token = 'light-1'
         return ip, access_token

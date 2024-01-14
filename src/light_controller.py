@@ -6,12 +6,12 @@ class LightController:
     light = Pin(led_pin, Pin.OUT)
 
     def turn_on(self):
-        self.light.high()
-        thingsboard.send_telemetry('ON', self.is_lit())
+        self.light.value(1)
+        self.thingsboard.send_telemetry('ON', self.is_lit())
 
     def turn_off(self):
-        self.light.low()
-        thingsboard.send_telemetry('ON', self.is_lit())
+        self.light.value(0)
+        self.thingsboard.send_telemetry('ON', self.is_lit())
 
     def set_status(self, status):
         if status:
