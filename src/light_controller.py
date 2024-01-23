@@ -4,7 +4,7 @@ class LightController:
 
     led_pin = 5 
     light = Pin(led_pin, Pin.OUT)
-
+    
     def turn_on(self):
         self.light.value(1)
         self.thingsboard.send_telemetry('ON', self.is_lit())
@@ -14,7 +14,7 @@ class LightController:
         self.thingsboard.send_telemetry('ON', self.is_lit())
 
     def set_status(self, status):
-        if status:
+        if bool(status):
             self.turn_on()
         else:
             self.turn_off()
