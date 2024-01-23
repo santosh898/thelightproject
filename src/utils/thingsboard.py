@@ -1,4 +1,6 @@
 from uthingsboard.client import TBDeviceMqttClient
+from time import sleep
+import asyncio
 
 class Thingsboard:
 
@@ -16,10 +18,11 @@ class Thingsboard:
 
     def subscribe_to_rpc(self):
         while True:
-            self.client.wait_msg()
+            await asyncio.sleep(1)
+            self.client.check_msg()
 
     def get_credentials(self):
         # get from eeprom
-        ip = '192.168.0.253'
+        ip = '192.168.0.252'
         access_token = 'light-1'
         return ip, access_token
