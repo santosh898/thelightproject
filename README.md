@@ -42,6 +42,10 @@ Repeat for all the dependecies.
 
 ## Before Running the Code
 
+Import `smart_light_controller.json` in thingsboard dashbaords section.
+
+Create a device and edit the `entity alias` to connect to the device. You can edit the alias in the imported `Smart Light Controller` dashboard's edit mode.
+
 Edit env.json with appropriate values for your dev setup
 
 ### TODO: Build a way to change these values via GUI
