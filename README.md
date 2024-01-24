@@ -39,3 +39,9 @@ mip.install("thingsboard_micropython")
 Repeat for all the dependecies.
 
 #### TODO: Write a script that automatically installs dependencies
+
+## Before Running the Code
+
+Edit env.json with appropriate values for your dev setup
+
+### TODO: Build a way to change these values via GUI
