@@ -1,5 +1,6 @@
 import network
 from time import sleep
+from mpy_env import get_env
 
 class WIFI:
 
@@ -16,10 +17,8 @@ class WIFI:
         print(f'Connected on {ip}')
 
     def get_credentials(self):
-        # get from eeprom here
-        ssid = "Home"
-        password = "chitapatalu"
-        return ssid, password
+        config = get_env("wifi")
+        return config.get("ssid"), config.get("password")
 
 if __name__ == "__main__":
     wifi = WIFI()

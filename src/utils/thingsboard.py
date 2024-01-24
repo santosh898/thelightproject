@@ -1,6 +1,7 @@
 from uthingsboard.client import TBDeviceMqttClient
 from time import sleep
 import asyncio
+from mpy_env import get_env
 
 class Thingsboard:
 
@@ -22,7 +23,5 @@ class Thingsboard:
             self.client.check_msg()
 
     def get_credentials(self):
-        # get from eeprom
-        ip = '192.168.0.252'
-        access_token = 'light-1'
-        return ip, access_token
+        config = get_env("thingsboard")
+        return config.get("ip"), config.get("accessToken")

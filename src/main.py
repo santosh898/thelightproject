@@ -2,11 +2,14 @@ from uthingsboard.client import TBDeviceMqttClient
 import json
 from machine import Pin
 import asyncio
+from mpy_env import load_env
 
 from utils.wifi import WIFI
 from utils.thingsboard import Thingsboard
 from light_controller import LightController
 from smart_light_controller import SmartLightController, Mode
+
+load_env()
 
 wifi = WIFI()
 thingsboard = Thingsboard()
